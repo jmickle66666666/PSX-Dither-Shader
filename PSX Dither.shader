@@ -109,10 +109,10 @@
                 float ditherSteps = _DitherPattern_TexelSize.z/ditherSize;
 
                 float2 ditherBlockUV = i.uv;
-                ditherBlockUV.x %= (ditherSize / _ScreenParams.x);
-                ditherBlockUV.x /= (ditherSize / _ScreenParams.x);
-                ditherBlockUV.y %= (ditherSize / _ScreenParams.y);
-                ditherBlockUV.y /= (ditherSize / _ScreenParams.y);
+                ditherBlockUV.x %= (ditherSize / _MainTex_TexelSize.z);
+                ditherBlockUV.x /= (ditherSize / _MainTex_TexelSize.w);
+                ditherBlockUV.y %= (ditherSize / _MainTex_TexelSize.z);
+                ditherBlockUV.y /= (ditherSize / _MainTex_TexelSize.w);
                 ditherBlockUV.x /= ditherSteps;
 
                 // Dither each channel individually
